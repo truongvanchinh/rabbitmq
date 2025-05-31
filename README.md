@@ -78,3 +78,8 @@ Hoạt động: 1 service producer muốn làm việc thì bước đầu phải
         persistent: true
     })
     ```
+
+## Bài 4: exchange route
+- Exchange rouute nằm giữa route và producer giúp binding msg về đúng route theo ý mình.
+- Có 4 loại là header, topic, fanout, direct -> bài này học về fanout
+- Trong queue có 1 options là `exclusive: true` thì nếu ngắt kết nối queue thì queue sẽ tự xóa, tránh lãng phí.
