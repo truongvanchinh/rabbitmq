@@ -79,7 +79,14 @@ Hoạt động: 1 service producer muốn làm việc thì bước đầu phải
     })
     ```
 
-## Bài 4: exchange route
+## Bài 4: exchange 'fanout'
 - Exchange rouute nằm giữa route và producer giúp binding msg về đúng route theo ý mình.
 - Có 4 loại là header, topic, fanout, direct -> bài này học về fanout
 - Trong queue có 1 options là `exclusive: true` thì nếu ngắt kết nối queue thì queue sẽ tự xóa, tránh lãng phí.
+
+
+## Bài 5: exchange 'topic'
+- Được sử dụng rộng rãi vì nó gửi dc cho bất kì thằng nào đăng kí, 1 bộ phận cụ thể, hoặc chỉ 1 bộ phận trong 1 bộ phận luôn.
+- key: # *
+    - <#> khớp với 1 hoặc bất kỳ vd: #.lead -> dev.test.lead or test.lead or dev.lead => is okay  
+    - <*> khớp với bất kỳ ký tự nào, vd: *.lead -> dev.lead, test.lead => okay; dev.test.lead => not okay
